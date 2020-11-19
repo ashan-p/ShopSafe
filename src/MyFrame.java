@@ -1,7 +1,4 @@
-
-// Java program to implement 
-// a Simple Registration Form 
-// using Java Swing 
+// This program was taken from somewhere online. It's not part of ShopSafe, just a demo for Swing
   
 import javax.swing.*; 
 import java.awt.*; 
@@ -63,7 +60,7 @@ class MyFrame
         setTitle("Registration Form"); 
         setBounds(300, 90, 900, 600); 
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
-        setResizable(false); 
+        //setResizable(false); 
   
         c = getContentPane(); 
         c.setLayout(null); 
