@@ -7,7 +7,7 @@
 
 import java.util.Date;
 
-public class Transaction
+public class Transaction implements java.io.Serializable
 {
     String seller;
     String purchaser;

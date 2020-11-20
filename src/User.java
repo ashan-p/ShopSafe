@@ -8,15 +8,15 @@
 
 import java.util.LinkedList;
 import java.util.Date;
-public class User
+public class User implements java.io.Serializable
 {
     private Date created;
     private int accessLevel;
     private String userName;
     private String password;
-    public static int STANDARD_ACCOUNT = 1;
-    public static int SELLER_ACCOUNT = 2;
-    public static int ADMIN_ACCOUNT = 3;
+    public static final int STANDARD_ACCOUNT = 1;
+    public static final int SELLER_ACCOUNT = 2;
+    public static final int ADMIN_ACCOUNT = 3;
     LinkedList<Transaction> purchases;
 
     public User(String un,String pw,int access)
