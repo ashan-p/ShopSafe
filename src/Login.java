@@ -19,6 +19,7 @@ public class Login
     public static final int INVALID_USERNAME = 20;
     public static final int INVALID_PASSWORD = 25;
     
+    public static class UsernameExists extends Exception {}
     
     private Login()
     {
@@ -51,19 +52,16 @@ public class Login
          }
     }
     
-    public int signUp(String un,String pw,int acc){
+    public User signUp(String un,String pw,int acc) throws UsernameExists {
         User u = new User(un,pw,acc);
         if(users.get(un) == null){
             users.put(u.getUserName(),u);
             save();
-            return SIGNUP_SUCCESS;
-            
+            return u;//return SIGNUP_SUCCESS;
         }
         else{
-            return USERNAME_EXISTS;
+            throw new UsernameExists();//return USERNAME_EXISTS;
         }
-        
-        
     }
     
     public User login(String un,String pw){
