@@ -4,12 +4,17 @@ import javax.swing.JPanel;
 /**
  * The Window class manages pages, allowing the user to visit a different page.
  * Can be implemented based on the Observer pattern.
+ * 
+ * Using the Singleton pattern.
  */
 
  // TODO: Look into using CardLayout
 public class Window extends JFrame {
+
+    private static Window instance = new Window("ShopSafe");
+    public static Window getInstance() { return instance; }
     
-    public Window(String title) {
+    private Window(String title) {
         super(title);
         setSize(600, 480);
         setLocationRelativeTo(null);
@@ -18,7 +23,7 @@ public class Window extends JFrame {
     }
 
     public void start() {
-        add(new LoginPage(this));
+        add(new LoginPage());
         setVisible(true);
     }
 

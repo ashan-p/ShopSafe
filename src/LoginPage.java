@@ -8,12 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  * The LoginPage handles logging the user into the system. It should be the first page
@@ -26,7 +24,8 @@ public class LoginPage extends JPanel {
      * Creates a new LoginPage. Sets up a title, input for the username and password,
      * and a button for submitting the information.
      */
-    public LoginPage (Window window) {
+    public LoginPage () {
+        Window window = Window.getInstance();
         Login database = Login.getInstance();
 
         JLabel welcome = new JLabel("Welcome to ShopSafe!");
@@ -53,7 +52,6 @@ public class LoginPage extends JPanel {
 
         JLabel submitError = new JLabel();
         submitError.setForeground(Color.RED);
-        submitError.setAlignmentX(0.0f);
 
         login.addActionListener(e -> {
             signUpOptions.setEnabled(false);
