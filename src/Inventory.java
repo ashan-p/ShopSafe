@@ -12,7 +12,11 @@ public class Inventory extends ArrayList<Item> {
     public static Inventory getInstance() { return instance; }
 
     private Inventory() {
-        /** possibly load from a file */
+        /** temp code for load from a file */
+        for (int i = 0; i < 30; i++) {
+            Item item = new Item("abc");
+            add(item);
+        }
     }
 
 }
