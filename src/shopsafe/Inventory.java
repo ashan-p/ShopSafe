@@ -1,3 +1,5 @@
+package shopsafe;
+
 import java.util.ArrayList;
 
 /**

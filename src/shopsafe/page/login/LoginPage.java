@@ -1,3 +1,5 @@
+package shopsafe.page.login;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -8,6 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+
+import shopsafe.Login;
+import shopsafe.User;
+import shopsafe.Window;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -48,7 +54,6 @@ public class LoginPage extends JPanel {
 
         JLabel password_text = new JLabel("Password");
         JPasswordField password = new JPasswordField();
-        System.out.println(password.getColumns());
 
         JLabel submitError = new JLabel();
         submitError.setForeground(Color.RED);

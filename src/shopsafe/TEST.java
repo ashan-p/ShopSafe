@@ -1,3 +1,4 @@
+package shopsafe;
 
 /**
  * Write a description of class TEST here.

@@ -1,3 +1,4 @@
+package shopsafe;
 
 /**
  * Item class holds information about an item. 

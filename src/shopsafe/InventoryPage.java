@@ -1,3 +1,5 @@
+package shopsafe;
+
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;

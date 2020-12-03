@@ -1,5 +1,9 @@
+package shopsafe;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import shopsafe.page.login.LoginPage;
 
 /**
  * The Window class manages pages, allowing the user to visit a different page.
