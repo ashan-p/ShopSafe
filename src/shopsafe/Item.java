@@ -39,11 +39,11 @@ public class Item implements Cloneable, java.io.Serializable
     }
     
     public void setSalePrice(int n){
-        int salePrice = n;
+        this.salePrice = n;
     }
     
     public void setBasePrice(int n){
-        int basePrice = n;
+        this.basePrice = n;
     }
     
     public String getItemDescription(){
@@ -67,10 +67,65 @@ public class Item implements Cloneable, java.io.Serializable
         return (Item)super.clone();
     }
 
+    /*Method for adding an item to a cart. Takes one from the one in inventory and clones itself with quantity one to add to shopping cart
+    This avoid having to have a seperate class for individual items.
+
+    This method takes an item from the inventory, adjusts the quantity, and if it 0's out an item, removes it's entry from the inventory.
+    */
+
+    public Item getOne() throws RuntimeException{
+        Item i = this.clone();
+        if(quantity <= 0){
+            throw new RuntimeException("NOT ENOUGH INVENTORY TO TAKE ITEM");
+        }
+        else{
+            quantity--;
+            i.quantity = 1;
+            if(quantity == 0){
+                Inventory inv = Inventory.getInstance();
+                inv.removeItem(i);
+
+            }
+            return i;
+        }
+
+    }
 
 
-    
-    
-    
+    /* Method for putting a single item back into inventory
+    */
+    public void putOne() throws RuntimeException{
+        Item item = this.clone;
+        //Check to see how many are in inventory
+        Inventory inv = Inventory.getInstance();
+        Item check = inv.getItem(item);
+        //Case : NONE IN INVENTORY
+        if(check == null){
+            //Case add the item back to inventory
+            item.quantity = 1;
+            inv.addItem(item);
+        }
+        //Case : Some In Inventory
+        else{
+            //Adjust quantity by one
+            Item fix = inv.getItem(i);
+            fix.incrementQuantity();
+        }
+
+        
+
+    }
+
+    public void incrementQuantity(){
+        quantity++;
+    }
 
 }
+
+
+
+    
+    
+    
+
+

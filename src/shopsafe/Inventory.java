@@ -50,7 +50,7 @@ public class Inventory{
 
     public void removeItem(Item i) throws RuntimeException
     {
-        if(items.get(i.getItemName()) != null){
+        if(items.get(i.getItemName()) == null){
             throw new RuntimeException("Item does not exist");
         }
         else{
@@ -108,7 +108,7 @@ public class Inventory{
         
         Item i = new Item("Televsion",10,u);
         Inventory inv = Inventory.getInstance();
-        inv.addItem(i);
+        inv.removeItem(i);
         inv.save();
 
 
