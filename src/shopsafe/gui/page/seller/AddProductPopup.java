@@ -17,7 +17,7 @@ public class AddProductPopup extends JDialog implements WindowListener {
     private OnlyOneManager<AddProductPopup> parent;
 
     protected AddProductPopup(OnlyOneManager<AddProductPopup> parent) {
-        super(Window.getInstance(), "Purchase");
+        super(Window.getInstance(), "Add Product");
         this.parent = parent;
 
         setLayout(new GridBagLayout());
@@ -25,6 +25,9 @@ public class AddProductPopup extends JDialog implements WindowListener {
 
         JPanel content = new JPanel();
         content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+
+        NamedTextField productName = new NamedTextField("Product name");
+        //NamedTextField 
 
         NamedTextField firstName = new NamedTextField("First Name");
         NamedTextField lastName = new NamedTextField("Last Name");

@@ -16,7 +16,7 @@ public class ItemTest {
 
         //Test setters and setters
         item.setBasePrice(100);
-        item.setSalePrice(1000); //What a markup!
+        item.setSalePrice(999); //What a markup!
         item.setDescription("You'll shoot your eye out!");
 
         assert(item.getQuantity() == 10);
