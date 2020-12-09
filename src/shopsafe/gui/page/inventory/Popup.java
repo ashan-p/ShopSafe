@@ -48,6 +48,7 @@ public class Popup extends JDialog implements WindowListener {
 
         add(content, new GridBagConstraints());
         setLocationRelativeTo(Window.getInstance());
+        addWindowListener(this);
         setVisible(true);
     }
 

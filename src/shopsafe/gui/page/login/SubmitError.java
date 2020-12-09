@@ -23,7 +23,7 @@ public class SubmitError extends JLabel {
         setText("");
     }
 
-    public void notify(Type type) {
+    public void showError(Type type) {
         switch (type) {
             case NoUsername:
                 setText("Enter username.");

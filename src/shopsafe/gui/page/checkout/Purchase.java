@@ -4,8 +4,10 @@ import javax.swing.JButton;
 
 public class Purchase extends JButton {
 
-    protected Purchase() {
+    protected Purchase(Footer parent) {
         super("Purchase");
+
+        addActionListener(e -> parent.popupIfNone());
     }
     
 }
