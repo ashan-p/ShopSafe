@@ -1,7 +1,7 @@
 package shopsafe;
 
 /**
- * Write a description of class User here.
+ * User information class
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -15,11 +15,18 @@ public class User implements java.io.Serializable
     private int accessLevel;
     private String userName;
     private String password;
-    public static final int STANDARD_ACCOUNT = 1;
-    public static final int SELLER_ACCOUNT = 2;
-    public static final int ADMIN_ACCOUNT = 3;
+    public static final int STANDARD_ACCOUNT = 1; //A normal user account
+    public static final int SELLER_ACCOUNT = 2; //A seller account
+    public static final int ADMIN_ACCOUNT = 3; //An administrator account(unused currently)
     LinkedList<Transaction> purchases;
 
+
+    /**
+     * 
+     * @param un Username
+     * @param pw Password - These are store unhashed/unsalted
+     * @param access ACCOUNT ACCESS LEVEL(see static members)
+     */
     public User(String un,String pw,int access)
     {
         created = new Date();

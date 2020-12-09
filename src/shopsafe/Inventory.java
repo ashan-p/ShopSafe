@@ -33,6 +33,10 @@ public class Inventory{
 
     }
 
+    public Item getItem(Item i){
+        return items.get(i.getItemName());
+    }
+
     public void addItem(Item i) throws RuntimeException{
         //Check if the item already exists
         String itemName = i.getItemName();

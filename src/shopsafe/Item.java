@@ -15,7 +15,13 @@ public class Item implements Cloneable, java.io.Serializable
     int quantity;
     User owner;
     
-
+    /**
+     * 
+     * @param in Item name
+     * @param q Quantity
+     * @param o Owner of the item
+     * @throws RuntimeException
+     */
     public Item(String in,int q,User o) throws RuntimeException 
        {
 		if(q <= 0){
@@ -67,14 +73,21 @@ public class Item implements Cloneable, java.io.Serializable
         return (Item)super.clone();
     }
 
-    /*Method for adding an item to a cart. Takes one from the one in inventory and clones itself with quantity one to add to shopping cart
-    This avoid having to have a seperate class for individual items.
 
-    This method takes an item from the inventory, adjusts the quantity, and if it 0's out an item, removes it's entry from the inventory.
-    */
-
+    /**
+     * Method for getting one item for use in shopping cart, in hindsight these methods should have belong to inventory
+     * @return A single Item for use in the shopping cart
+     * @throws RuntimeException
+     * 
+     */
     public Item getOne() throws RuntimeException{
-        Item i = this.clone();
+        Item i = null;
+        try{
+            i = this.clone();
+        }catch(Exception e){
+            System.out.println("Clone not supported?");
+            e.printStackTrace();
+        }
         if(quantity <= 0){
             throw new RuntimeException("NOT ENOUGH INVENTORY TO TAKE ITEM");
         }
@@ -92,10 +105,18 @@ public class Item implements Cloneable, java.io.Serializable
     }
 
 
-    /* Method for putting a single item back into inventory
-    */
+    /**
+     * Method adds one of itself to the inventory
+     * @throws RuntimeException
+     */
     public void putOne() throws RuntimeException{
-        Item item = this.clone;
+        Item item = null;
+        try{
+            item = this.clone();
+        }catch(Exception e){
+            System.out.println("Clone Not Supported");
+            e.printStackTrace();
+        }
         //Check to see how many are in inventory
         Inventory inv = Inventory.getInstance();
         Item check = inv.getItem(item);
@@ -108,14 +129,17 @@ public class Item implements Cloneable, java.io.Serializable
         //Case : Some In Inventory
         else{
             //Adjust quantity by one
-            Item fix = inv.getItem(i);
+            Item fix = inv.getItem(item);
             fix.incrementQuantity();
         }
 
         
 
     }
-
+    
+    /**
+     * Increments the quantity of an object by one
+     */
     public void incrementQuantity(){
         quantity++;
     }

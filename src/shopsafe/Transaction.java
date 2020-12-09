@@ -1,7 +1,8 @@
 package shopsafe;
 
 /**
- * 
+ * Class for keeping track of completed transactions
+ * Used for calculating how much money sellers have made
  * @author Daniel Bennett
  * 
 */
@@ -16,6 +17,13 @@ public class Transaction implements java.io.Serializable
     String itemName;
     int basePrice;
     int salePrice;
+
+    /**
+     * 
+     * @param s Seller
+     * @param p Purchaser
+     * @param i Item being purchased
+     */
     public Transaction(User s,User p,Item i)
     {
         time = new Date();

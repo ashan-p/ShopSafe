@@ -1,16 +1,22 @@
 package shopsafe;
 
+import java.util.*;
+
+
+
 public class ShoppingCart {
+
+
     private ArrayList<Item> items;
     User owner;
 
     public ShoppingCart(User u){
-        items = new ArrayList<Items>();
+        items = new ArrayList<Item>();
         this.owner = u;
     }
 
-    public void addItem(item i) throws RuntimeException{
-        if(i.getQuantity <= 0){
+    public void addItem(Item i) throws RuntimeException{
+        if(i.getQuantity() <= 0){
             throw new RuntimeException("Not enough item to add");            
         }
         //TODO: find a better way to mangage items
