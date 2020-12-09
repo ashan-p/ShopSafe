@@ -1,8 +1,9 @@
-package shopsafe.gui.page.inventory;
+package shopsafe.gui.page.seller;
+
+import shopsafe.gui.ScalableImage;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import shopsafe.gui.ScalableImage;
 
 // Composite
 // Observer
@@ -16,7 +17,7 @@ public class ItemSelection extends JButton {
 
         add(imageLabel);
         addActionListener(e -> {
-            parent.popupIfNone(name, description, image, price, available);
+            //parent.popupIfNone(name, description, image, price, available);
         });
     }
 

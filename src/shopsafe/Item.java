@@ -32,7 +32,7 @@ public class Item implements Cloneable, java.io.Serializable
         this.owner = o;
     }
     
-    public void setDecription(String d){
+    public void setDescription(String d){
         this.itemDescription = d;
     }
 

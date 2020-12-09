@@ -1,4 +1,4 @@
-package shopsafe.gui.page.inventory;
+package shopsafe.gui;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 // Immutable
 public class ScalableImage extends ImageIcon {
 
-    protected static ScalableImage createWithSize(String filename, int size) {
+    public static ScalableImage createWithSize(String filename, int size) {
         return new ScalableImage(filename).scaleTo(size, size);
     }
 
@@ -16,7 +16,7 @@ public class ScalableImage extends ImageIcon {
         super(img);
     }
 
-    protected ScalableImage(String filename) {
+    public ScalableImage(String filename) {
         super(filename);
     }
 

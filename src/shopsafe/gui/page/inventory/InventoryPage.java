@@ -7,7 +7,6 @@ import shopsafe.gui.Window;
 public class InventoryPage extends JPanel {
 
     public InventoryPage() {
-
         ViewCart viewCart = new ViewCart();
         InventorySelection inventorySelection = new InventorySelection();
 

@@ -8,6 +8,7 @@ import shopsafe.gui.page.cart.ShoppingCartPage;
 import shopsafe.gui.page.checkout.CheckoutPage;
 import shopsafe.gui.page.inventory.InventoryPage;
 import shopsafe.gui.page.login.LoginPage;
+import shopsafe.gui.page.seller.SellerPage;
 
 /**
  * The Window class manages pages, allowing the user to visit a different page.
@@ -58,6 +59,15 @@ public class Window extends JFrame {
 
         contentPane.removeAll();
         contentPane.add(new CheckoutPage());
+        contentPane.revalidate();
+        contentPane.repaint();
+    }
+
+    public void gotoSeller() {
+        JPanel contentPane = (JPanel)getContentPane();
+
+        contentPane.removeAll();
+        contentPane.add(new SellerPage());
         contentPane.revalidate();
         contentPane.repaint();
     }

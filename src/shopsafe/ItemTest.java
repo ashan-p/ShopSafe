@@ -1,7 +1,11 @@
 package shopsafe;
 
+import org.junit.*;
+import static org.junit.Assert.*;
+
 public class ItemTest {
-    public static void main(String[] Args){
+    @Test
+    public void itWorks(){
         //Initialize varaibles needed for testing
         User owner = new User("Owner","abc123",User.SELLER_ACCOUNT);
         User buyer = new User("Buyer","abc123",User.STANDARD_ACCOUNT);
@@ -24,9 +28,6 @@ public class ItemTest {
         //Testing increment
         item.incrementQuantity();
         assert(item.getQuantity() == 11);
-
-        
-
         
         //Setup for testing of cart functionm
 
@@ -45,7 +46,6 @@ public class ItemTest {
         Item test2 = inv.getItem(item);
         assert(test2.getQuantity() == 10);
         test.putOne();
-        assert(false);
         
 
 
