@@ -4,8 +4,8 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ItemTest {
-    @Test
-    public void itWorks(){
+    
+    public static void main(String args[]){
         //Initialize varaibles needed for testing
         User owner = new User("Owner","abc123",User.SELLER_ACCOUNT);
         User buyer = new User("Buyer","abc123",User.STANDARD_ACCOUNT);
@@ -24,6 +24,14 @@ public class ItemTest {
         assert(1000 == item.getSalePrice());
         assert(item.getItemDescription().equals("You'll shoot your eye out!"));
         assert(item.getItemName().equals("Red rider BB gun"));
+
+        //Testing string parsing
+        item.setSalePrice("109.997");
+        item.setBasePrice("12.21");
+
+        System.out.println(item.getSalePrice());
+        System.out.println(item.getBasePrice());
+
 
         //Testing increment
         item.incrementQuantity();

@@ -1,5 +1,8 @@
 package shopsafe;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;;
+
 /**
  * Item class holds information about an item. 
  *
@@ -46,6 +49,21 @@ public class Item implements Cloneable, java.io.Serializable
     
     public void setSalePrice(int n){
         this.salePrice = n;
+    }
+
+    public void setSalePrice(String s) throws RuntimeException{
+        BigDecimal bd = new BigDecimal(s);
+        bd.setScale(2,RoundingMode.HALF_DOWN);
+        bd = bd.movePointRight(2);
+        this.salePrice = bd.intValue();
+    }
+
+    public void setBasePrice(String s) throws RuntimeException{
+        BigDecimal bd = new BigDecimal(s);
+        bd.setScale(2,RoundingMode.HALF_DOWN);
+        bd = bd.movePointRight(2);
+        this.basePrice = bd.intValue();
+
     }
     
     public void setBasePrice(int n){
