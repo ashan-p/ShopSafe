@@ -24,7 +24,7 @@ public class InventorySelection extends JPanel {
 
     public void popupIfNone(String name, String description, ImageIcon image, double price, int available) {
         if (noActivePopup()) {
-            new Popup(this, name, description, image, price, available);
+            currentPopup = new Popup(this, name, description, image, price, available);
         }
     }
 

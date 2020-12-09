@@ -1,30 +1,12 @@
 package shopsafe.gui.page.login;
 
-import java.awt.Component;
-
-import javax.swing.JPasswordField;
-
-import shopsafe.gui.NamedInput;
+import shopsafe.gui.NamedTextField;
 
 // Template
-public class Password extends NamedInput<String> {
-
-    private JPasswordField field;
+public class Password extends NamedTextField {
 
     protected Password() {
-        super("Password");
+        super("Username");
     }
 
-    public Component createInput() {
-        field = new JPasswordField();
-        return field;
-    }
-
-    public String getValue() {
-        return new String(field.getPassword());
-    }
-
-    public boolean empty() {
-        return field.getPassword().length == 0;
-    }
 }

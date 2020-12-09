@@ -40,9 +40,9 @@ public class Submit extends JButton implements ActionListener {
         Login database = Login.getInstance();
 
         if (username.empty()) {
-            submitError.notify(SubmitError.Type.NoUsername);
+            submitError.showError(SubmitError.Type.NoUsername);
         } else if (password.empty()) {
-            submitError.notify(SubmitError.Type.NoPassword);
+            submitError.showError(SubmitError.Type.NoPassword);
         } else {
             String un = username.getValue();
             String pw = password.getValue();
@@ -70,7 +70,7 @@ public class Submit extends JButton implements ActionListener {
                         User user = database.signUp(un, pw, acc);
                         window.gotoInventory(user);
                     } catch (Login.UsernameExists ex) {
-                        submitError.notify(SubmitError.Type.UsernameExists);
+                        submitError.showError(SubmitError.Type.UsernameExists);
                     }
                 }
             }
