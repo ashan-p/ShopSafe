@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 public class TransactionLog {
-    //TODO : CREATE A SECONDARY LOG OF TRANSACTIONS
+    
 
     ArrayList<Transaction> transactions;
 
@@ -53,5 +53,9 @@ public class TransactionLog {
     
 
     public static TransactionLog getInstance(){return instance;}
+
+
+
+    
 
 }

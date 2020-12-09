@@ -52,6 +52,24 @@ public class User implements java.io.Serializable
     public void addTransaction(Transaction t){
         purchases.add(t);
     }
+
+    public boolean equals(User u){
+        if(u.getUserName().equals(this.userName)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean equals(String s){
+        if(s.equals(userName)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     
 
