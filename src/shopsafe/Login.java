@@ -6,7 +6,7 @@ package shopsafe;
  * @author (your name)
  * @version (a version number or a date)
  */
-import java.util.LinkedList;
+
 import java.io.*;
 import java.util.HashMap;
 
@@ -20,7 +20,14 @@ public class Login
     public static final int INVALID_USERNAME = 20;
     public static final int INVALID_PASSWORD = 25;
     
-    public static class UsernameExists extends Exception {}
+    
+    public static class UsernameExists extends Exception {
+
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
+    }
     
     private Login()
     {
