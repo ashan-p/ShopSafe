@@ -1,5 +1,9 @@
 package shopsafe;
 
+
+/**
+ * Unit-test for User class, testing functionality needed for MVP
+ */
 public class UserTest {
     public static void main(String[] Args){
 

@@ -35,4 +35,35 @@ public class Transaction implements java.io.Serializable
         
     }
 
+    public String getSeller(){
+        return this.seller;
+    }
+
+    public String getPurchaser(){
+        return this.purchaser;
+    }
+
+    public String getItemName(){
+        return this.itemName;
+    }
+
+    public int getBasePrice(){
+        return basePrice;
+    }
+
+    public int getSalePrice(){
+        return salePrice;
+    }
+
+    public Date getDate(){
+        return this.time;
+    }
+
+
+
+    public int getProfit(){
+        return this.salePrice - this.basePrice;
+    }
+
+
 }
