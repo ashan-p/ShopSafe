@@ -1,9 +1,13 @@
-package shopsafe;
+package shopsafe.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import shopsafe.page.login.LoginPage;
+import shopsafe.User;
+import shopsafe.gui.page.cart.ShoppingCartPage;
+import shopsafe.gui.page.checkout.CheckoutPage;
+import shopsafe.gui.page.inventory.InventoryPage;
+import shopsafe.gui.page.login.LoginPage;
 
 /**
  * The Window class manages pages, allowing the user to visit a different page.
@@ -35,7 +39,25 @@ public class Window extends JFrame {
         JPanel contentPane = (JPanel)getContentPane();
 
         contentPane.removeAll();
-        contentPane.add(new InventoryPage(user));
+        contentPane.add(new InventoryPage());
+        contentPane.revalidate();
+        contentPane.repaint();
+    }
+
+    public void gotoShoppingCart() {
+        JPanel contentPane = (JPanel)getContentPane();
+
+        contentPane.removeAll();
+        contentPane.add(new ShoppingCartPage());
+        contentPane.revalidate();
+        contentPane.repaint();
+    }
+
+    public void gotoCheckout() {
+        JPanel contentPane = (JPanel)getContentPane();
+
+        contentPane.removeAll();
+        contentPane.add(new CheckoutPage());
         contentPane.revalidate();
         contentPane.repaint();
     }

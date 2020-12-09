@@ -1,4 +1,4 @@
-package shopsafe;
+import shopsafe.gui.Window;
 
 /**
  * The entry point to the App. Grabs the window and shows the login page.

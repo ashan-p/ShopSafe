@@ -1,4 +1,4 @@
-package shopsafe;
+package shopsafe.gui.page.inventory;
 
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
@@ -12,6 +12,11 @@ import javax.swing.JTextArea;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
+
+import shopsafe.Inventory;
+import shopsafe.User;
+import shopsafe.gui.Window;
+
 import javax.swing.Box;
 
 import java.awt.GridLayout;
@@ -28,7 +33,7 @@ import java.awt.BorderLayout;
 
 import java.text.NumberFormat;
 
-public class InventoryPage extends JPanel {
+public class InventoryPageOld extends JPanel {
 
     public static ImageIcon scaleImageIcon(ImageIcon imageIcon, int width, int height) {
         Image image = imageIcon.getImage(); // transform it
@@ -38,7 +43,7 @@ public class InventoryPage extends JPanel {
 
     JDialog currentPopup;
 
-    public InventoryPage(User user) {
+    public InventoryPageOld(User user) {
         Window window = Window.getInstance();
         Inventory inventory = Inventory.getInstance();
 
