@@ -13,10 +13,12 @@ public class Item implements Cloneable, java.io.Serializable
 {
     String itemName;
     String itemDescription;
+    String imagePath;
     int basePrice; //Price in cents
     int salePrice;
     int quantity;
     User owner;
+
     
     /**
      * 
@@ -37,6 +39,14 @@ public class Item implements Cloneable, java.io.Serializable
     
     public void setDescription(String d){
         this.itemDescription = d;
+    }
+
+    public void setImagePath(String s){
+        this.imagePath = s;
+    }
+
+    public String getImagePath(){
+        return imagePath;
     }
 
     public int getQuantity(){

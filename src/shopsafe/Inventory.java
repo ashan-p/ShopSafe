@@ -37,6 +37,11 @@ public class Inventory{
         return items.get(i.getItemName());
     }
 
+    /**
+     * Adds an item to the inventory
+     * @param i Item to add
+     * @throws RuntimeException
+     */
     public void addItem(Item i) throws RuntimeException{
         //Check if the item already exists
         String itemName = i.getItemName();
@@ -51,7 +56,11 @@ public class Inventory{
             items.put(itemName,i);
         }
     }
-
+    /**
+     * Removes an item from the inventory entirely. 
+     * @param i Item to remove from the inventory
+     * @throws RuntimeException
+     */
     public void removeItem(Item i) throws RuntimeException
     {
         if(items.get(i.getItemName()) == null){
@@ -90,7 +99,10 @@ public class Inventory{
         }
         return retval;
     }
-
+    /**
+     * Saves the inventory
+     * @return true if sucessful, else false
+     */
     public boolean save(){
         try {
             FileOutputStream fileOut =
@@ -106,7 +118,10 @@ public class Inventory{
         }
     }
 
-    //Test Function
+    /**
+     * Testing function for inventory
+     * @param Args unused
+     */
     public static void main(String[] Args){
         User u = new User("Daniel","12345",User.STANDARD_ACCOUNT);
         
