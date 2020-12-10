@@ -2,21 +2,23 @@ package shopsafe.gui.page.checkout;
 
 import javax.swing.JPanel;
 
+import shopsafe.ShoppingCart;
+import shopsafe.User;
 import shopsafe.gui.Window;
 
 import java.awt.BorderLayout;
 
 public class CheckoutPage extends JPanel {
     
-    public CheckoutPage() {
+    public CheckoutPage(User user, ShoppingCart shoppingCart) {
         Object[][] data = {
             {"TV", 1, 199.99},
             {"Abc", 2, 30.05},
         };
 
-        BackToCart backToCart = new BackToCart();
+        BackToCart backToCart = new BackToCart(user, shoppingCart);
         Listings listings = new Listings(data);
-        Footer footer = new Footer();
+        Footer footer = new Footer(user, shoppingCart);
 
         setLayout(new BorderLayout());
 
@@ -27,7 +29,7 @@ public class CheckoutPage extends JPanel {
 
     public static void main(String[] args) {
         Window.getInstance().start();
-        Window.getInstance().gotoCheckout();
+        //Window.getInstance().gotoCheckout();
     }
 
 }

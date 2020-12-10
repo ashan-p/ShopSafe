@@ -11,6 +11,8 @@ import java.awt.GridBagConstraints;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import shopsafe.Item;
+import shopsafe.ShoppingCart;
 import shopsafe.gui.Window;
 
 // Composite
@@ -19,18 +21,18 @@ public class Popup extends JDialog implements WindowListener {
 
     private InventorySelection parent;
 
-    protected Popup(InventorySelection parent, String name, String description, ImageIcon image, double price, int available) {
-        super(Window.getInstance(), name);
+    protected Popup(InventorySelection parent, ShoppingCart shoppingCart, ImageIcon image, Item item) {
+        super(Window.getInstance(), item.getItemName());
         this.parent = parent;
 
         setLayout(new GridBagLayout());
         setSize(350, 400);
 
-        Description descriptionComp = new Description(description);
+        Description descriptionComp = new Description(item.getItemDescription());
         Picture picture = new Picture(image);
-        Stats stats = new Stats(price, available);
-        Quantity quantity = new Quantity(available, stats);
-        AddToCart addToCart = new AddToCart(this, quantity);
+        Stats stats = new Stats(item.getSalePriceAsDouble(), item.getQuantity());
+        Quantity quantity = new Quantity(item.getQuantity(), stats);
+        AddToCart addToCart = new AddToCart(this, shoppingCart, quantity, item);
 
         JPanel content = new JPanel();
         content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));

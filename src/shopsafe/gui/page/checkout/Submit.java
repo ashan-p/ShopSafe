@@ -2,6 +2,8 @@ package shopsafe.gui.page.checkout;
 
 import javax.swing.JButton;
 
+import shopsafe.ShoppingCart;
+import shopsafe.User;
 import shopsafe.gui.NamedTextField;
 import shopsafe.gui.Window;
 import shopsafe.gui.page.checkout.SubmitError.Cause;
@@ -11,7 +13,7 @@ public class Submit extends JButton {
 
     protected Submit(
         Popup parent,
-        SubmitError submitError,
+        User user, ShoppingCart shoppingCart, SubmitError submitError,
         NamedTextField firstName,
         NamedTextField lastName,
         NamedTextField creditCardNumber,
@@ -34,7 +36,10 @@ public class Submit extends JButton {
             } else {
                 submitError.reset();
                 parent.close();
-                Window.getInstance().gotoInventory(null);
+                
+
+
+                Window.getInstance().gotoInventory(user, shoppingCart);
             }
         });
     }

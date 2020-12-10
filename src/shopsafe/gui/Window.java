@@ -3,6 +3,7 @@ package shopsafe.gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.page.cart.ShoppingCartPage;
 import shopsafe.gui.page.checkout.CheckoutPage;
@@ -45,29 +46,29 @@ public class Window extends JFrame {
         contentPane.repaint();
     }
 
-    public void gotoInventory(User user) {
+    public void gotoInventory(User user, ShoppingCart shoppingCart) {
         JPanel contentPane = (JPanel)getContentPane();
 
         contentPane.removeAll();
-        contentPane.add(new InventoryPage());
+        contentPane.add(new InventoryPage(user, shoppingCart));
         contentPane.revalidate();
         contentPane.repaint();
     }
 
-    public void gotoShoppingCart() {
+    public void gotoShoppingCart(User user, ShoppingCart shoppingCart) {
         JPanel contentPane = (JPanel)getContentPane();
 
         contentPane.removeAll();
-        contentPane.add(new ShoppingCartPage());
+        contentPane.add(new ShoppingCartPage(user, shoppingCart));
         contentPane.revalidate();
         contentPane.repaint();
     }
 
-    public void gotoCheckout() {
+    public void gotoCheckout(User user, ShoppingCart shoppingCart) {
         JPanel contentPane = (JPanel)getContentPane();
 
         contentPane.removeAll();
-        contentPane.add(new CheckoutPage());
+        contentPane.add(new CheckoutPage(user, shoppingCart));
         contentPane.revalidate();
         contentPane.repaint();
     }

@@ -5,6 +5,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
+import shopsafe.ShoppingCart;
+import shopsafe.User;
 import shopsafe.gui.NamedTextField;
 import shopsafe.gui.Window;
 
@@ -18,7 +20,7 @@ public class Popup extends JDialog implements WindowListener {
     
     private Footer parent;
 
-    protected Popup(Footer parent) {
+    protected Popup(Footer parent, User user, ShoppingCart shoppingCart) {
         super(Window.getInstance(), "Purchase");
         this.parent = parent;
 
@@ -36,7 +38,7 @@ public class Popup extends JDialog implements WindowListener {
 
         SubmitError submitError = new SubmitError();
 
-        Submit submit = new Submit(this, submitError, firstName, lastName, creditCardNumber, cvv, expirationDate);
+        Submit submit = new Submit(this, user, shoppingCart, submitError, firstName, lastName, creditCardNumber, cvv, expirationDate);
 
         content.add(firstName);
         content.add(Box.createVerticalStrut(10));
