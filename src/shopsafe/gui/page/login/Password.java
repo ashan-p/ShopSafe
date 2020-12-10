@@ -10,7 +10,7 @@ import shopsafe.gui.NamedTextField;
 public class Password extends NamedTextField {
 
     protected Password() {
-        super("Username");
+        super("Password");
     }
 
 }
