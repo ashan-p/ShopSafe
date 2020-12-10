@@ -3,7 +3,6 @@ package shopsafe;
 import java.util.*;
 
 
-
 public class ShoppingCart {
 
 
@@ -19,7 +18,6 @@ public class ShoppingCart {
         if(i.getQuantity() <= 0){
             throw new RuntimeException("Not enough item to add");            
         }
-        //TODO: find a better way to mangage items
         else{
             items.add(i.getOne());
         }
@@ -51,12 +49,26 @@ public class ShoppingCart {
     items.clear();
     }
 
-    //TODO : FINISH THIS
+    
     public void checkout(){
-        //TODO Create transactions for every item in the cart;
-        //ADD TRANSACTION TO LOG
-        //ADD TRANSACTION TO SELLER/AND USERS
-
+        Transaction t1;
+        Transaction t2;
+        //Create transactions for each item in the cart and add them to the log/user accounts
+        TransactionLog log = TransactionLog.getInstance();
+        for(Item i : items){
+            t1 = new Transaction(i.getOwner(), owner, i);
+            t2 = new Transaction(i.getOwner(),owner,i);
+            //Add the transactions to the users, and the log
+            log.add(t1);
+            owner.addTransaction(t2);
+            i.getOwner().addTransaction(t2);
+        }
+        //Save the log and the inventory and the login
+        log.save();
+        Inventory.getInstance().save();
+        Login.getInstance().save();
+        //Clear the items in the cart
+        items.clear();
 
     }
 

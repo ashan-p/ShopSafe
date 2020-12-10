@@ -53,8 +53,8 @@ public class Item implements Cloneable, java.io.Serializable
         return quantity;
     }
 
-    public String getOwner(){
-        return owner.getUserName();
+    public User getOwner(){
+        return owner;
     }
     
     public void setSalePrice(int n){
