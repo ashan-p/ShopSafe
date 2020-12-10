@@ -63,6 +63,8 @@ public class TransactionLog {
     }
 
     
+
+    
     /**
      * 
      * @return TransactionLog the singleton object

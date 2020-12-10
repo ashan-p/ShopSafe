@@ -61,6 +61,18 @@ public class Item implements Cloneable, java.io.Serializable
         this.salePrice = n;
     }
 
+    public double getSalePriceAsDouble(){
+        double d = this.salePrice;
+        d = d/100;
+        return d;
+    }
+
+    public double getBasePriceAsDouble(){
+        double d = this.basePrice;
+        d = d/100;
+        return d;
+    }
+
     public void setSalePrice(String s) throws RuntimeException{
         BigDecimal bd = new BigDecimal(s);
         bd.setScale(2,RoundingMode.HALF_DOWN);
