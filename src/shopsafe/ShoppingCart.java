@@ -2,7 +2,9 @@ package shopsafe;
 
 import java.util.*;
 
-
+/**
+ * Provides shoping cart for session, aggregates items for purchase and creates transactions
+ */
 public class ShoppingCart {
 
 
@@ -14,6 +16,11 @@ public class ShoppingCart {
         this.owner = u;
     }
 
+    /**
+     * 
+     * @param i Item to add to cart
+     * @throws RuntimeException
+     */
     public void addItem(Item i) throws RuntimeException{
         if(i.getQuantity() <= 0){
             throw new RuntimeException("Not enough item to add");            
@@ -23,15 +30,25 @@ public class ShoppingCart {
         }
     }
 
+    /**
+     * Removes an item from the cart
+     * @param i Item to remove
+     */
     public void removeItem(Item i){
         i.putOne();
         items.remove(i);
     }
-
+    /**
+     * 
+     * @return # items in cart
+     */
     public int size(){
         return items.size();
     }
-
+    /**
+     * Returns a collection of items in the cart
+     * @return An array list of the items in the shopping cart
+     */
     public ArrayList<Item> getItems(){
         ArrayList<Item> retval = new ArrayList<Item>();
         for(Item i : items){
@@ -49,7 +66,9 @@ public class ShoppingCart {
     items.clear();
     }
 
-    
+    /**
+     * Completes all the processes required for buying the items.
+     */
     public void checkout(){
         Transaction t1;
         Transaction t2;

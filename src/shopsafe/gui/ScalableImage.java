@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 
 // Adapter
 // Immutable
+/**
+ * @author Ashan Perera
+ */
 public class ScalableImage extends ImageIcon {
 
     public static ScalableImage createWithSize(String filename, int size) {

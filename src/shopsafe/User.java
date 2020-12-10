@@ -3,7 +3,7 @@ package shopsafe;
 /**
  * User information class
  *
- * @author (your name)
+ * @author Daniel Bennett
  * @version (a version number or a date)
  */
 

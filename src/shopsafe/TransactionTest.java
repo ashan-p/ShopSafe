@@ -1,5 +1,8 @@
 package shopsafe;
 
+/**
+ * @author Daniel Bennett
+ */
 public class TransactionTest {
     public static void main(String[] args){
 

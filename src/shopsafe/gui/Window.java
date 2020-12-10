@@ -13,7 +13,7 @@ import shopsafe.gui.page.seller.SellerPage;
 /**
  * The Window class manages pages, allowing the user to visit a different page.
  * Can be implemented based on the Observer pattern.
- * 
+ * @author Ashan Perera
  * Using the Singleton pattern.
  */
 

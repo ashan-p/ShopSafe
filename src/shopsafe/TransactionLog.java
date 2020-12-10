@@ -3,6 +3,7 @@ package shopsafe;
 import java.util.ArrayList;
 import java.io.*;
 /**
+ * Used to aggregate transactions and calculate statistics about revenue
  * @author Daniel Bennett
  * @version 1.0 
  */
@@ -29,6 +30,11 @@ public class TransactionLog {
             transactions = new ArrayList<Transaction>();
         }
     }
+
+    /**
+     * saves the transaction log to disk
+     * @return true if successful, else false
+     */
     public boolean save(){
         try {
             FileOutputStream fileOut =

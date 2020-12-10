@@ -8,6 +8,7 @@ import java.io.*;
  * A collection of Items.
  * 
  * Uses the Singleton pattern.
+ * @author Daniel Bennett
  */
 
 /*

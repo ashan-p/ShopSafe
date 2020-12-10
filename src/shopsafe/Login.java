@@ -1,10 +1,10 @@
 package shopsafe;
 
 /**
- * Login Subsystem
+ * Login Subsystem aggregates users and provides login/signup services
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Daniel Bennett
+ * @version 1.0
  */
 
 import java.io.*;
@@ -45,6 +45,10 @@ public class Login
         
     }
     
+    /**
+     * Saves the object to disk
+     * @return true if successful, else false
+     */
     public boolean save(){
          try {
              FileOutputStream fileOut =
@@ -60,6 +64,14 @@ public class Login
          }
     }
     
+    /**
+     * Creates a new user account
+     * @param un Username - Must be Unique
+     * @param pw password
+     * @param acc access level - see static class members
+     * @return User if successful, else exception
+     * @throws UsernameExists
+     */
     public User signUp(String un,String pw,int acc) throws UsernameExists {
         User u = new User(un,pw,acc);
         if(users.get(un) == null){
@@ -72,6 +84,13 @@ public class Login
         }
     }
     
+
+    /**
+     * Login
+     * @param un Username
+     * @param pw Password
+     * @return the User if successful, else null;
+     */
     public User login(String un,String pw){
         User u = users.get(un);
         
@@ -84,7 +103,10 @@ public class Login
         return null;
         
     }
-    
+    /**
+     * Get instance for the singleton
+     * @return the instance
+     */
     public static Login getInstance(){
         return instance;
     }

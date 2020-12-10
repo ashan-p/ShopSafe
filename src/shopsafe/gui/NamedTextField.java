@@ -4,6 +4,9 @@ import javax.swing.JTextField;
 import java.awt.Component;
 
 // Template
+/**
+ * @author Ashan Perera
+ */
 public class NamedTextField extends NamedInput<String> {
     
     private JTextField field;

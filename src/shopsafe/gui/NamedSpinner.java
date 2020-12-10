@@ -5,6 +5,9 @@ import java.awt.Component;
 import javax.swing.SpinnerNumberModel;
 
 // Template
+/**
+ * @author Ashan Perera
+ */
 public class NamedSpinner extends NamedInput<Integer> {
     
     private JSpinner input;

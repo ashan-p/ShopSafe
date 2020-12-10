@@ -6,6 +6,9 @@ import static org.junit.Assert.*;
 
 //Note Daniel : JUnit testing isnt working for me within VSCODE so I'm using system out and manually inspecting the outputs for testing purposes
 
+/**
+ * @author : Daniel Bennett
+ */
 public class ItemTest {
     
     public static void main(String args[]){

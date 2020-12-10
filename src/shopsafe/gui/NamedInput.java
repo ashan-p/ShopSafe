@@ -7,6 +7,9 @@ import java.awt.Component;
 
 // Composite
 // Template
+/**
+ * @author Ashan Perera
+ */
 public abstract class NamedInput<E> extends JPanel {
 
     private JLabel name;
