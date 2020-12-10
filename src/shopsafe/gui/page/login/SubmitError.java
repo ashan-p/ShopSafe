@@ -4,8 +4,11 @@ import java.awt.Color;
 
 import javax.swing.JLabel;
 
-// Decorator
-// Observer
+/**
+ * Displays a submission error if logging in/signing up goes wrong.
+ * 
+ * @author Ashan Perera
+ */
 public class SubmitError extends JLabel {
 
     public static enum Type {

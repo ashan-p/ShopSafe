@@ -5,9 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Component;
 
-// Composite
-// Template
 /**
+ * Combines an input field with a name. Makes use of the Composite and Template patterns.
  * @author Ashan Perera
  */
 public abstract class NamedInput<E> extends JPanel {
@@ -25,6 +24,9 @@ public abstract class NamedInput<E> extends JPanel {
     public abstract Component createInput();
     public abstract E getValue();
 
+    /**
+     * Get the name label.
+     */
     protected JLabel getNameLabel() {
         return name;
     }

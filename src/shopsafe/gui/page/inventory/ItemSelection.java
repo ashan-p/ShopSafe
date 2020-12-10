@@ -7,8 +7,11 @@ import shopsafe.Item;
 import shopsafe.ShoppingCart;
 import shopsafe.gui.ScalableImage;
 
-// Composite
-// Observer
+/**
+ * A selection for a specific item. Makes use of the Composite and Observer patterns.
+ * 
+ * @author Ashan Perera
+ */
 public class ItemSelection extends JButton {
     
     private static final int IMAGE_SIZE = 85;

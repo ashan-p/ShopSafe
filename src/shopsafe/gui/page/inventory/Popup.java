@@ -17,6 +17,13 @@ import shopsafe.gui.Window;
 
 // Composite
 // Observer
+/**
+ * A popup displaying a summary of an item and allows the customer to
+ * add it to their cart based on the quantity. Makes use of the Composite
+ * and Observer patterns.
+ * 
+ * @author Ashan Perera
+ */
 public class Popup extends JDialog implements WindowListener {
 
     private InventorySelection parent;

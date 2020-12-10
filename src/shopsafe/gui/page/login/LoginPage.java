@@ -11,7 +11,9 @@ import java.awt.GridBagConstraints;
 /**
  * The LoginPage handles logging the user into the system. It should be the first page
  * the user sees when first opening the application. The user can enter their username and
- * password here to access their Customer or Seller account.
+ * password here to access their Customer or Seller account. Makes use of the Composite pattern.
+ * 
+ * @author Ashan Perera
  */
 public class LoginPage extends JPanel {
     

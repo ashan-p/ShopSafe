@@ -6,6 +6,11 @@ import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.Window;
 
+/**
+ * Transitions into the shopping cart page.
+ * 
+ * @author Ashan Perera
+ */
 public class ViewCart extends JButton {
     
     protected ViewCart(User user, ShoppingCart shoppingCart) {        

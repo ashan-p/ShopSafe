@@ -8,6 +8,12 @@ import javax.swing.JPanel;
 
 // Decorator
 // Observer
+/**
+ * Shows the price and available amount of the item, and updates the
+ * price based on quantity. Makes use of the Decorator and Observer patterns.
+ * 
+ * @author Ashan Perera
+ */
 public class Stats extends JPanel {
 
     private double price;

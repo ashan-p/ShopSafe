@@ -11,7 +11,11 @@ import shopsafe.ShoppingCart;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
-// Composite
+/**
+ * Displays all the items available to the customer. Makes use of the Composite pattern.
+ * 
+ * @author Ashan Perera
+ */
 public class InventorySelection extends JPanel {
     
     private JDialog currentPopup;

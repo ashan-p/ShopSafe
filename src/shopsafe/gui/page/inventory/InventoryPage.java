@@ -8,6 +8,13 @@ import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.Window;
 
+/**
+ * The inventory page allows the customer to view what items are available in the inventory.
+ * They can make their selection to add to the shopping cart, then proceed to the shopping cart
+ * page.
+ * 
+ * @author Ashan Perera
+ */
 public class InventoryPage extends JPanel {
 
     public InventoryPage(User user, ShoppingCart shoppingCart) {

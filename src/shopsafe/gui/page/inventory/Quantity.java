@@ -11,6 +11,12 @@ import shopsafe.gui.NamedInput;
 
 // Template
 // Observer
+/**
+ * Allows the user to adjust the quantity of items based on availability. Makes use of the
+ * Template and Observer patterns.
+ * 
+ * @author Ashan Perera
+ */
 public class Quantity extends NamedInput<Integer> {
 
     private JSpinner input;

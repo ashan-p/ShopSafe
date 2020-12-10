@@ -3,7 +3,11 @@ package shopsafe.gui.page.inventory;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
-// Decorator
+/**
+ * A description of an item shown in a text area. Makes use of the Decorator pattern.
+ * 
+ * @author Ashan Perera
+ */
 public class Description extends JTextArea {
     
     protected Description (String description) {

@@ -10,6 +10,13 @@ import shopsafe.gui.Window;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Uses the user name, password, and signing up options to either create a new
+ * account or sign in with a previous one with the Login database. Handles errors
+ * by reporting them with the SubmitError.
+ * 
+ * @author Ashan Perera
+ */
 public class Submit extends JButton implements ActionListener {
     
     private Username username;

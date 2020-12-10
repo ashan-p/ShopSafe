@@ -6,6 +6,11 @@ import javax.swing.JLabel;
 import shopsafe.Item;
 import shopsafe.ShoppingCart;
 
+/**
+ * Adds the item to the shopping cart with the specified quantity.
+ * 
+ * @author Ashan Perera
+ */
 public class AddToCart extends JButton {
 
     protected AddToCart(Popup parent, ShoppingCart shoppingCart, Quantity quantity, Item item) {
