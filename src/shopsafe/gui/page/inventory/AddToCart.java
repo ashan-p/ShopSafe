@@ -13,7 +13,11 @@ public class AddToCart extends JButton {
 
         setAlignmentX(JLabel.CENTER_ALIGNMENT);
         addActionListener(e2 -> {
-            shoppingCart.addItem(item);
+            Item i = shoppingCart.addItem(item);
+            
+            for (int j = 1; j < quantity.getValue(); j++) {
+                i.incrementQuantity();
+            }
 
             parent.close();
         });

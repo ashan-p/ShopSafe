@@ -1,6 +1,7 @@
 package shopsafe.gui.page.cart;
 
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 
 import shopsafe.Item;
 import shopsafe.ShoppingCart;
@@ -17,7 +18,12 @@ public class Listings extends JPanel {
         setLayout(new GridLayout(0, 2));
 
         for (Item item : shoppingCart.getItems()) {
-            
+            names.add(item.getItemName());
+
+            JSpinner input = quantities.add(item.getQuantity(), item.getQuantity());
+            input.addChangeListener(e -> {
+                item.setQuantity((Integer)input.getValue());
+            });
         }
 
         add(names);

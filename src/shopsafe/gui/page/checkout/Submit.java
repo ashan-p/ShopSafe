@@ -37,7 +37,7 @@ public class Submit extends JButton {
                 submitError.reset();
                 parent.close();
                 
-
+                shoppingCart.checkout();
 
                 Window.getInstance().gotoInventory(user, shoppingCart);
             }

@@ -11,11 +11,12 @@ public class Quantities extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     }
 
-    public void add (int quantity, int available) {
+    public JSpinner add (int quantity, int available) {
         SpinnerNumberModel bounds = new SpinnerNumberModel(quantity, 0, available, 1);
         JSpinner input = new JSpinner(bounds);
 
         add(input);
+        return input;
     }
 
 }

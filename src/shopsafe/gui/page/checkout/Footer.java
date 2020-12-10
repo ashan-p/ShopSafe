@@ -7,15 +7,16 @@ import shopsafe.ShoppingCart;
 import shopsafe.User;
 
 import java.awt.GridLayout;
+import java.text.NumberFormat;
 
 public class Footer extends JPanel {
     
     private Popup currentPopup;
 
-    protected Footer(User user, ShoppingCart shoppingCart) {
+    protected Footer(User user, ShoppingCart shoppingCart, double totalPrice) {
         setLayout(new GridLayout(2, 0));
 
-        JLabel priceLabel = new JLabel("Total price: $999.88");
+        JLabel priceLabel = new JLabel("Total price: " + NumberFormat.getCurrencyInstance().format(totalPrice));
         Purchase purchase = new Purchase(this, user, shoppingCart);
 
         add(priceLabel);

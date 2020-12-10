@@ -2,23 +2,30 @@ package shopsafe.gui.page.checkout;
 
 import javax.swing.JPanel;
 
+import shopsafe.Item;
 import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.Window;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 
 public class CheckoutPage extends JPanel {
     
     public CheckoutPage(User user, ShoppingCart shoppingCart) {
-        Object[][] data = {
-            {"TV", 1, 199.99},
-            {"Abc", 2, 30.05},
-        };
+        double totalPrice = 0;
+
+        Object[][] data = new Object[shoppingCart.size()][];
+        for (int i = 0; i < shoppingCart.size(); i++) {
+            Item item = shoppingCart.getItems().get(i);
+            Object[] row = new Object[]{item.getItemName(), item.getQuantity(), item.getSalePriceAsDouble()};
+            data[i] = row;
+            totalPrice += item.getQuantity() * item.getSalePriceAsDouble();
+        }
 
         BackToCart backToCart = new BackToCart(user, shoppingCart);
         Listings listings = new Listings(data);
-        Footer footer = new Footer(user, shoppingCart);
+        Footer footer = new Footer(user, shoppingCart, totalPrice);
 
         setLayout(new BorderLayout());
 

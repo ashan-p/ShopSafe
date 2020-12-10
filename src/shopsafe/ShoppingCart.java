@@ -21,12 +21,16 @@ public class ShoppingCart {
      * @param i Item to add to cart
      * @throws RuntimeException
      */
-    public void addItem(Item i) throws RuntimeException{
+    public Item addItem(Item i) throws RuntimeException{
         if(i.getQuantity() <= 0){
             throw new RuntimeException("Not enough item to add");            
         }
         else{
-            items.add(i.getOne());
+            Item iClone = i.getOne();
+
+            items.add(iClone);
+
+            return iClone;
         }
     }
 
@@ -70,17 +74,17 @@ public class ShoppingCart {
      * Completes all the processes required for buying the items.
      */
     public void checkout(){
-        Transaction t1;
-        Transaction t2;
+        //Transaction t1;
+        //Transaction t2;
         //Create transactions for each item in the cart and add them to the log/user accounts
         TransactionLog log = TransactionLog.getInstance();
         for(Item i : items){
-            t1 = new Transaction(i.getOwner(), owner, i);
-            t2 = new Transaction(i.getOwner(),owner,i);
+            //t1 = new Transaction(i.getOwner(), owner, i);
+            //t2 = new Transaction(i.getOwner(),owner,i);
             //Add the transactions to the users, and the log
-            log.add(t1);
-            owner.addTransaction(t2);
-            i.getOwner().addTransaction(t2);
+            //log.add(t1);
+            //owner.addTransaction(t2);
+            //i.getOwner().addTransaction(t2);
         }
         //Save the log and the inventory and the login
         log.save();
