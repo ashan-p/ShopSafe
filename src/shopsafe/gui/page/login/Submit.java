@@ -3,6 +3,7 @@ package shopsafe.gui.page.login;
 import javax.swing.JButton;
 
 import shopsafe.Login;
+import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.Window;
 
@@ -52,7 +53,8 @@ public class Submit extends JButton implements ActionListener {
                     if (user == null) {
                         submitError.setText("Invalid login.");
                     } else {
-                        window.gotoInventory(user);
+                        ShoppingCart shoppingCart = new ShoppingCart(user);
+                        window.gotoInventory(user, shoppingCart);
                     }
                 }
                 case SignUp: {
@@ -73,7 +75,8 @@ public class Submit extends JButton implements ActionListener {
                                 window.gotoSeller(user);
                                 break;
                             default:
-                                window.gotoInventory(user);
+                                ShoppingCart shoppingCart = new ShoppingCart(user);
+                                window.gotoInventory(user, shoppingCart);
                                 break;
                         }
                     } catch (Login.UsernameExists ex) {

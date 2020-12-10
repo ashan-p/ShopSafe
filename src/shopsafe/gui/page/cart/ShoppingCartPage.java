@@ -3,14 +3,16 @@ package shopsafe.gui.page.cart;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
+import shopsafe.ShoppingCart;
+import shopsafe.User;
 import shopsafe.gui.Window;
 
 public class ShoppingCartPage extends JPanel {
     
-    public ShoppingCartPage() {
-        BackToSelection backToSelection = new BackToSelection();
-        Listings listings = new Listings();
-        ProceedToCheckout proceedToCheckout = new ProceedToCheckout();
+    public ShoppingCartPage(User user, ShoppingCart shoppingCart) {
+        BackToSelection backToSelection = new BackToSelection(user, shoppingCart);
+        Listings listings = new Listings(shoppingCart);
+        ProceedToCheckout proceedToCheckout = new ProceedToCheckout(user, shoppingCart);
 
         setLayout(new BorderLayout());
 
@@ -21,7 +23,7 @@ public class ShoppingCartPage extends JPanel {
 
     public static void main(String[] args) {
         Window.getInstance().start();
-        Window.getInstance().gotoShoppingCart();
+        //Window.getInstance().gotoShoppingCart(null);
     }
 
 }

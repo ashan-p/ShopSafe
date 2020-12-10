@@ -3,18 +3,36 @@ package shopsafe.gui.page.inventory;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+
+import shopsafe.Inventory;
+import shopsafe.Item;
+import shopsafe.ShoppingCart;
+
 import java.awt.GridLayout;
+import java.util.ArrayList;
 
 // Composite
 public class InventorySelection extends JPanel {
     
     private JDialog currentPopup;
+    private ShoppingCart shoppingCart;
 
-    protected InventorySelection() {
+    protected InventorySelection(ShoppingCart shoppingCart) {
         super(new GridLayout(0, 5));
+        this.shoppingCart = shoppingCart;
+        
+        refresh();
+    }
 
-        for (int i = 0; i < 16; i++) {
-            add(new ItemSelection(this, "images/television.png", "Television", "Buy it.", 199.99, 10));
+    public void refresh() {
+        Inventory inventory = Inventory.getInstance();
+        removeAll();
+        revalidate();
+        repaint();
+
+        ArrayList<Item> items = inventory.getItems(inventory.getSize());
+        for (Item item : items) {
+            add(new ItemSelection(this, shoppingCart, item));
         }
     }
 
@@ -22,9 +40,9 @@ public class InventorySelection extends JPanel {
         return currentPopup == null;
     }
 
-    public void popupIfNone(String name, String description, ImageIcon image, double price, int available) {
+    public void popupIfNone(ImageIcon image, ShoppingCart shoppingCart, Item item) {
         if (noActivePopup()) {
-            currentPopup = new Popup(this, name, description, image, price, available);
+            currentPopup = new Popup(this, shoppingCart, image, item);
         }
     }
 
