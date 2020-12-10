@@ -32,8 +32,17 @@ public class Window extends JFrame {
     }
 
     public void start() {
-        add(new LoginPage());
+        gotoLogin();
         setVisible(true);
+    }
+
+    public void gotoLogin() {
+        JPanel contentPane = (JPanel)getContentPane();
+
+        contentPane.removeAll();
+        contentPane.add(new LoginPage());
+        contentPane.revalidate();
+        contentPane.repaint();
     }
 
     public void gotoInventory(User user) {
@@ -63,11 +72,11 @@ public class Window extends JFrame {
         contentPane.repaint();
     }
 
-    public void gotoSeller() {
+    public void gotoSeller(User user) {
         JPanel contentPane = (JPanel)getContentPane();
 
         contentPane.removeAll();
-        contentPane.add(new SellerPage());
+        contentPane.add(new SellerPage(user));
         contentPane.revalidate();
         contentPane.repaint();
     }

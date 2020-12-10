@@ -28,4 +28,8 @@ public class NamedTextField extends NamedInput<String> {
     public boolean empty() {
         return field.getText().length() == 0;
     }
+
+    public void setValue(String value) {
+        field.setText(value);
+    }
 }

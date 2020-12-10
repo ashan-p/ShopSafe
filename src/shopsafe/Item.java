@@ -91,6 +91,10 @@ public class Item implements Cloneable, java.io.Serializable
     public void setBasePrice(int n){
         this.basePrice = n;
     }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
     
     public String getItemDescription(){
         return this.itemDescription;

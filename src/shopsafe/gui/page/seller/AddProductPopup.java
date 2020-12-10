@@ -4,7 +4,11 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 
+import shopsafe.User;
+import shopsafe.gui.NamedSpinner;
 import shopsafe.gui.NamedTextField;
 import shopsafe.gui.Window;
 import java.awt.event.WindowEvent;
@@ -16,7 +20,7 @@ public class AddProductPopup extends JDialog implements WindowListener {
 
     private OnlyOneManager<AddProductPopup> parent;
 
-    protected AddProductPopup(OnlyOneManager<AddProductPopup> parent) {
+    protected AddProductPopup(OnlyOneManager<AddProductPopup> parent, User user, InventorySelection inventorySelection) {
         super(Window.getInstance(), "Add Product");
         this.parent = parent;
 
@@ -26,24 +30,33 @@ public class AddProductPopup extends JDialog implements WindowListener {
         JPanel content = new JPanel();
         content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
 
-        NamedTextField productName = new NamedTextField("Product name");
-        //NamedTextField 
+        NamedTextField productName = new NamedTextField("Product Name");
 
-        NamedTextField firstName = new NamedTextField("First Name");
-        NamedTextField lastName = new NamedTextField("Last Name");
-        NamedTextField creditCardNumber = new NamedTextField("Credit Card Number");
-        NamedTextField cvv = new NamedTextField("CVV");
-        NamedTextField expirationDate = new NamedTextField("Expiration Date");
+        NamedTextField description = new NamedTextField("Product Description");
 
-        content.add(firstName);
+        NamedTextField basePrice = new NamedTextField("Base Price");
+        NamedTextField salePrice = new NamedTextField("Sale Price");
+
+        NamedSpinner quantityInput = new NamedSpinner("Quantity");
+        quantityInput.setInputBounds(1, 1, Integer.MAX_VALUE, 1);
+
+        NamedTextField imagePath = new NamedTextField("Path to Product Image");
+
+        AddProductSubmit addProductSubmit = new AddProductSubmit(this, user, inventorySelection, productName, description, basePrice, salePrice, quantityInput, imagePath);
+
+        content.add(productName);
         content.add(Box.createVerticalStrut(10));
-        content.add(lastName);
+        content.add(description);
         content.add(Box.createVerticalStrut(10));
-        content.add(creditCardNumber);
+        content.add(basePrice);
         content.add(Box.createVerticalStrut(10));
-        content.add(cvv);
+        content.add(salePrice);
         content.add(Box.createVerticalStrut(10));
-        content.add(expirationDate);
+        content.add(quantityInput);
+        content.add(Box.createVerticalStrut(10));
+        content.add(imagePath);
+        content.add(Box.createVerticalStrut(30));
+        content.add(addProductSubmit);
 
         add(content, new GridBagConstraints());
         setLocationRelativeTo(Window.getInstance());

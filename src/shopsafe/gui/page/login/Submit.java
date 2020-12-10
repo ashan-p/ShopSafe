@@ -68,7 +68,14 @@ public class Submit extends JButton implements ActionListener {
 
                     try {
                         User user = database.signUp(un, pw, acc);
-                        window.gotoInventory(user);
+                        switch (acc) {
+                            case User.SELLER_ACCOUNT:
+                                window.gotoSeller(user);
+                                break;
+                            default:
+                                window.gotoInventory(user);
+                                break;
+                        }
                     } catch (Login.UsernameExists ex) {
                         submitError.showError(SubmitError.Type.UsernameExists);
                     }
