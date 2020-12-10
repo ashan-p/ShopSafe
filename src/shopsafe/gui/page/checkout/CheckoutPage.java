@@ -10,6 +10,13 @@ import shopsafe.gui.Window;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 
+/**
+ * The checkout page gives a static summary of all the items, quantities, and prices.
+ * At the bottom it shows the final price the customer must pay. A popup will be displayed
+ * to complete payment.
+ * 
+ * @author Ashan Perera
+ */
 public class CheckoutPage extends JPanel {
     
     public CheckoutPage(User user, ShoppingCart shoppingCart) {

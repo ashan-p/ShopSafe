@@ -7,6 +7,13 @@ import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.Window;
 
+/**
+ * The shopping cart page shows all items currently in the shopping cart.
+ * The customer can make changes to the quantities, return back to the
+ * selection page, or proceed to checkout.
+ * 
+ * @author Ashan Perera
+ */
 public class ShoppingCartPage extends JPanel {
     
     public ShoppingCartPage(User user, ShoppingCart shoppingCart) {

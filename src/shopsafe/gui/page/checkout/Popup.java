@@ -15,7 +15,12 @@ import java.awt.event.WindowListener;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
-// Composite
+/**
+ * The Popup accepts payment informatino from the user, and will show
+ * an error if any fields are missing. Makes use of the Composite pattern.
+ * 
+ * @author Ashan Perera
+ */
 public class Popup extends JDialog implements WindowListener {
     
     private Footer parent;

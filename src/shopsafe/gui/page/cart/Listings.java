@@ -10,6 +10,12 @@ import java.awt.GridLayout;
 import java.awt.Dimension;
 import javax.swing.Box;
 
+/**
+ * Lists out all the items in the shopping cart by name and quantity.
+ * Makes use of the Composite pattern.
+ * 
+ * @author Ashan Perera
+ */
 public class Listings extends JPanel {
 
     protected Listings(ShoppingCart shoppingCart) {

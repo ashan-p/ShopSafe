@@ -5,6 +5,11 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
+/**
+ * Displays the quantities of each item, which the user can change.
+ * 
+ * @author Ashan Perera
+ */
 public class Quantities extends JPanel {
     
     protected Quantities() {

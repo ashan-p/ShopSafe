@@ -6,6 +6,11 @@ import shopsafe.ShoppingCart;
 import shopsafe.User;
 import shopsafe.gui.Window;
 
+/**
+ * Transitions the user back to the shopping cart page.
+ * 
+ * @author Ashan Perera
+ */
 public class BackToCart extends JButton {
 
     protected BackToCart(User user, ShoppingCart shoppingCart) {

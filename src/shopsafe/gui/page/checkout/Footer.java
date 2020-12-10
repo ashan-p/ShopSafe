@@ -9,6 +9,12 @@ import shopsafe.User;
 import java.awt.GridLayout;
 import java.text.NumberFormat;
 
+/**
+ * The Footer displays the total price and a button for purchasing
+ * at the bottom of the page.
+ * 
+ * @author Ashan Perera
+ */
 public class Footer extends JPanel {
     
     private Popup currentPopup;

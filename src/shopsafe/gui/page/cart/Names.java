@@ -4,6 +4,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Displays all the names of items in the shopping cart.
+ * 
+ * @author Ashan Perera
+ */
 public class Names extends JPanel {
 
     protected Names() {

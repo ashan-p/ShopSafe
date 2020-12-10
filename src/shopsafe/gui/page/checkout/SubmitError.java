@@ -4,6 +4,11 @@ import java.awt.Color;
 
 import javax.swing.JLabel;
 
+/**
+ * Displays the payment submission error.
+ * 
+ * @author Ashan Perera
+ */
 public class SubmitError extends JLabel {
     
     public static enum Cause {

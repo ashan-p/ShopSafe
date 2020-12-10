@@ -9,6 +9,11 @@ import shopsafe.gui.Window;
 import shopsafe.gui.page.checkout.SubmitError.Cause;
 
 // Observer
+/**
+ * Submits the payment information and will error if anything is wrong.
+ * 
+ * @author Ashan Perera
+ */
 public class Submit extends JButton {
 
     protected Submit(
